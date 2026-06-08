@@ -3,10 +3,191 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NearLoop 在地二手交易平台</title>
+    <title>NearLoop v2 在地二手交易平台</title>
+    <style>
+      :root{--orange:#ff5b00;--ink:#1f2933;--muted:#64748b;--line:#e5e7eb;--bg:#f8fafc;--teal:#0f9f8f}
+      *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:8px;font-weight:800}.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:14px 24px;background:#fff;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--orange);color:#fff}.nav{display:flex;gap:6px;flex:1}.nav button,.ghost{padding:10px 14px;background:#f1f5f9;color:var(--ink)}.nav button.active{background:#fff1e8;color:var(--orange)}.primary{padding:12px 18px;background:var(--orange);color:#fff}.hero{position:relative;color:#fff;background:linear-gradient(90deg,#111827de,#11182766),url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80") center/cover}.hero-inner{width:min(1180px,calc(100% - 32px));margin:auto;padding:80px 0}.hero h1{max-width:780px;margin:0;font-size:clamp(36px,5vw,68px);line-height:1.05}.hero p{max-width:760px;line-height:1.7}.search{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr auto;gap:10px;margin-top:24px;padding:12px;background:#fff;border-radius:8px;color:var(--ink);box-shadow:0 20px 60px #11182744}.field{display:grid;gap:6px;padding:10px;background:#f8fafc;border-radius:8px}.field span{font-size:12px;color:var(--muted);font-weight:900}.field input,.field select{width:100%;border:0;outline:0;background:transparent;font-weight:800}.wrap{width:min(1260px,calc(100% - 32px));margin:28px auto}.grid{display:grid;grid-template-columns:260px 1fr 350px;gap:22px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 28px #0f172a0d}.panel{padding:18px}.filter label,.sell label,.login label{display:grid;gap:7px;margin-bottom:14px;color:var(--muted);font-size:14px;font-weight:800}.filter select,.filter input,.sell input,.sell select,.sell textarea,.login input{border:1px solid var(--line);border-radius:8px;padding:11px}.chips{display:flex;gap:8px;overflow:auto;margin:12px 0 18px}.chip{white-space:nowrap;padding:10px 13px;background:#fff;border:1px solid var(--line)}.chip.active{background:var(--ink);color:#fff}.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.item{overflow:hidden}.thumb{position:relative;aspect-ratio:1.35;background:#e5e7eb}.thumb img,.detail img,.preview img{width:100%;height:100%;object-fit:cover}.item-body{padding:14px}.muted{color:var(--muted)}.price{color:var(--orange);font-size:22px;font-weight:950}.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px;font-weight:800}.detail{position:sticky;top:86px;overflow:hidden}.detail .body{padding:18px}.map{display:grid;place-items:center;min-height:120px;margin:14px 0;border:1px solid #bdeee6;border-radius:8px;background:linear-gradient(90deg,#0f9f8f22 1px,transparent 1px),linear-gradient(#0f9f8f22 1px,transparent 1px),#effdfa;background-size:26px 26px;text-align:center}.sell-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}.upload{display:grid;place-items:center;min-height:230px;padding:22px;border:1px dashed #cbd5e1;border-radius:8px;background:#fff;text-align:center;color:var(--muted)}.upload input{display:none}.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.preview{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}.preview b{position:absolute;left:6px;top:6px;background:var(--orange);color:#fff;border-radius:8px;padding:4px 7px;font-size:12px}.preview button{position:absolute;right:6px;top:6px;background:#ffffffee;padding:5px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{padding:12px;border-radius:8px;background:#ecfdf5;color:#047857;font-weight:800}.error{padding:12px;border-radius:8px;background:#fee2e2;color:#991b1b;font-weight:800}.metrics,.file-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric{padding:18px}.metric b{display:block;color:var(--orange);font-size:30px}.file-grid{grid-template-columns:repeat(3,1fr)}.file{padding:16px;background:#f8fafc;border:1px solid var(--line);border-radius:8px}.file dl{display:grid;grid-template-columns:auto 1fr;gap:6px 10px}.file dt{color:var(--muted);font-weight:900}.file dd{margin:0;font-weight:900}.policy{line-height:1.8}.modal{position:fixed;inset:0;z-index:20;display:none;place-items:center;background:#0f172a80;padding:18px}.modal.open{display:grid}.login{position:relative;width:min(520px,100%);padding:26px}.close{position:absolute;right:14px;top:14px;background:#f1f5f9;padding:8px}.accounts{display:grid;gap:8px;margin-top:12px}.accounts button{text-align:left;padding:10px;background:#f8fafc;border:1px solid var(--line)}.hidden{display:none!important}@media(max-width:1000px){.grid,.sell-grid,.search{grid-template-columns:1fr}.detail{position:static}.list{grid-template-columns:repeat(3,1fr)}.metrics,.file-grid{grid-template-columns:1fr 1fr}}@media(max-width:640px){.top{padding:12px;flex-wrap:wrap}.nav{order:3;flex-basis:100%;overflow:auto}.hero-inner{padding:48px 0}.list,.photos,.metrics,.file-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="top">
+      <div class="brand"><span class="mark">NL</span>NearLoop v2</div>
+      <nav class="nav">
+        <button data-tab="market" class="active">探索</button>
+        <button data-tab="sell">我要刊登</button>
+        <button data-tab="chat">訊息</button>
+        <button data-tab="admin">後台</button>
+      </nav>
+      <button id="authBtn" class="primary">登入</button>
+    </header>
+
+    <section id="market" class="view">
+      <div class="hero">
+        <div class="hero-inner">
+          <p><b>社區裡的低碳循環市集</b></p>
+          <h1>找得到附近好物，也走得到面交地點。</h1>
+          <p>第二版加入會員登入、完整商品照片刊登，以及 500 會員規模的後台檔案治理規格。</p>
+          <div class="search">
+            <label class="field"><span>要找什麼</span><input id="q" placeholder="腳踏車、電鑽、茶几"></label>
+            <label class="field"><span>步行時間</span><select id="walk"><option value="5">5 分鐘</option><option value="10">10 分鐘</option><option value="15">15 分鐘</option><option value="20" selected>20 分鐘</option></select></label>
+            <label class="field"><span>距離</span><select id="radius"><option value=".5">500m</option><option value="1">1km</option><option value="5" selected>5km</option><option value="20">20km</option></select></label>
+            <label class="field"><span>最高價格</span><input id="maxPrice" inputmode="numeric" placeholder="不限"></label>
+            <button id="searchBtn" class="primary">搜尋</button>
+          </div>
+        </div>
+      </div>
+      <main class="wrap grid">
+        <aside class="panel filter">
+          <h3>篩選</h3>
+          <label>分類<select id="category"></select></label>
+          <label>最低價格<input id="minPrice" inputmode="numeric" placeholder="0"></label>
+          <div class="notice">前台只顯示約 200 公尺模糊圈，不公開精準座標。</div>
+        </aside>
+        <section>
+          <h2>附近可面交物件</h2>
+          <div id="chips" class="chips"></div>
+          <div id="items" class="list"></div>
+        </section>
+        <aside id="detail" class="card detail"></aside>
+      </main>
+    </section>
+
+    <section id="sell" class="view hidden">
+      <main class="wrap sell-grid">
+        <div>
+          <p class="muted"><b>Snap-sell v2</b></p>
+          <h1>完整照片刊登流程</h1>
+          <p class="muted">最多 8 張照片，第一張為主圖。前端會預覽、移除、驗證必填欄位；正式後端再轉 WebP、移除 EXIF、上傳物件儲存。</p>
+          <label class="upload" id="drop">
+            <b>拖曳或點選商品照片</b>
+            <span>建議每張 5 MB 內</span>
+            <input id="photoInput" type="file" accept="image/*" multiple>
+          </label>
+          <div id="photoGrid" class="photos"></div>
+        </div>
+        <form id="sellForm" class="panel sell">
+          <label>商品名稱<input id="sellTitle" required placeholder="例如：九成新折疊腳踏車"></label>
+          <label>分類<select id="sellCategory"></select></label>
+          <label>價格 NT$<input id="sellPrice" required inputmode="numeric" placeholder="2800"></label>
+          <div class="form-row">
+            <label>步行時間<input id="sellWalk" value="10" inputmode="numeric"></label>
+            <label>距離 km<input id="sellDistance" value="1" inputmode="decimal"></label>
+          </div>
+          <label>概略位置<input id="sellArea" required placeholder="大安森林公園周邊"></label>
+          <label>物品描述<textarea id="sellDesc" placeholder="說明新舊程度、瑕疵、配件、面交注意事項"></textarea></label>
+          <div id="sellMsg"></div>
+          <button class="primary" type="submit">刊登到附近市集</button>
+        </form>
+      </main>
+    </section>
+
+    <section id="chat" class="view hidden">
+      <main class="wrap grid" style="grid-template-columns:320px 1fr">
+        <aside class="panel"><h1>站內隱私通訊</h1><p class="muted">不交換手機、LINE 或地址。確認面交點前只保留概略區域。</p></aside>
+        <section class="panel"><h2 id="chatTitle">九成新折疊腳踏車</h2><div id="chatBox"></div><p><button class="ghost quick">請問方便約什麼時候？</button> <button class="ghost quick">我已經到了喔！</button></p></section>
+      </main>
+    </section>
+
+    <section id="admin" class="view hidden">
+      <main class="wrap">
+        <h1>管理員後台與檔案規格</h1>
+        <p class="muted">第二版先以 500 會員規模規劃會員檔案、商品照片、聊天附件、交易憑證與檢舉附件。</p>
+        <div class="metrics">
+          <div class="card metric"><b id="mActive">0</b>上架物件</div>
+          <div class="card metric"><b>500</b>預開會員容量</div>
+          <div class="card metric"><b>35 GB</b>初期物件儲存預留</div>
+          <div class="card metric"><b>8 張</b>單件商品照片上限</div>
+        </div>
+        <h2>500 會員檔案規格</h2>
+        <div id="fileGrid" class="file-grid"></div>
+        <h2>檔案治理與安全規則</h2>
+        <ul id="policy" class="panel policy"></ul>
+      </main>
+    </section>
+
+    <div id="loginModal" class="modal">
+      <section class="card login">
+        <button class="close" id="closeLogin">X</button>
+        <h1>會員登入</h1>
+        <p class="muted">第二版提供可運作的前端登入/session。正式版可接 JWT、手機驗證與 OAuth。</p>
+        <label>Email<input id="email" value="seller@nearloop.test"></label>
+        <label>密碼<input id="password" type="password" value="123456"></label>
+        <div id="loginMsg"></div>
+        <button id="loginBtn" class="primary">登入</button>
+        <div class="accounts">
+          <button data-email="buyer@nearloop.test" data-pass="123456"><b>買家</b><br>buyer@nearloop.test / 123456</button>
+          <button data-email="seller@nearloop.test" data-pass="123456"><b>賣家</b><br>seller@nearloop.test / 123456</button>
+          <button data-email="admin@nearloop.test" data-pass="admin123"><b>管理員</b><br>admin@nearloop.test / admin123</button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const categories=["全部","數位電子","居家生活","運動休閒","親子用品","服飾配件","書籍文具","工具借用"];
+      const accounts=[
+        {email:"buyer@nearloop.test",password:"123456",name:"測試買家",role:"買家"},
+        {email:"seller@nearloop.test",password:"123456",name:"測試賣家",role:"賣家"},
+        {email:"admin@nearloop.test",password:"admin123",name:"平台管理員",role:"管理員"}
+      ];
+      const filePlans=[
+        ["會員頭像","500 人 x 1","300 KB","150 MB","WebP 512px，保留最新版本"],
+        ["身分/信任資料","500 份","120 KB","60 MB","加密儲存，只留雜湊與審核狀態"],
+        ["商品照片","500 人 x 20 件 x 6 張","450 KB","27 GB","原圖壓縮，產生縮圖/列表/詳情三尺寸"],
+        ["聊天圖片","每月 3,000 張","350 KB","1.05 GB/月","90 天冷儲存，檢舉案件延長保存"],
+        ["QR 交易憑證","每月 1500 筆","20 KB","30 MB/月","保存交易 ID、雙方確認與時間戳"],
+        ["檢舉附件","每月 100 件","800 KB","80 MB/月","管理員可追蹤，180 天後封存"]
+      ];
+      const policies=[
+        "500 會員初期容量建議預留 35 GB 物件儲存，含 25% 成長緩衝。",
+        "商品照片前端限制單件最多 8 張、單張 5 MB；後端轉 WebP 並移除 EXIF。",
+        "檔案路徑採 userId/listingId/type/uuid，避免暴露 email 或手機。",
+        "公開圖片走 CDN；私人聊天圖與檢舉附件使用短效簽名 URL。",
+        "資料庫只存檔案 metadata、hash、尺寸、owner、visibility、retentionUntil。",
+        "每日做 metadata 備份，物件儲存開 versioning 與 lifecycle rule。"
+      ];
+      let user=JSON.parse(localStorage.getItem("nearloopUser")||"null");
+      let photos=[];
+      let listings=[
+        {title:"九成新折疊腳踏車",category:"運動休閒",price:2800,walk:9,distance:.9,area:"大安森林公園周邊",seller:"Mina",image:"https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=900&q=80",desc:"附車燈與密碼鎖，公開地點面交。"},
+        {title:"IKEA 小茶几 淺木色",category:"居家生活",price:650,walk:6,distance:.6,area:"信義安和站附近",seller:"Aaron",image:"https://images.unsplash.com/photo-1532372320572-cda25653a694?auto=format&fit=crop&w=900&q=80",desc:"桌面有輕微使用痕跡，不影響使用。"},
+        {title:"Switch 健身環與收納盒",category:"數位電子",price:1450,walk:14,distance:1.4,area:"台電大樓生活圈",seller:"Yu",image:"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=900&q=80",desc:"完整盒裝，配件齊全。"},
+        {title:"Bosch 電鑽短期借用",category:"工具借用",price:120,walk:12,distance:1.2,area:"科技大樓站周邊",seller:"Liu",image:"https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=80",desc:"社區工具借用示範，可借一天。"}
+      ];
+      const $=id=>document.getElementById(id);
+      function init(){
+        for(const id of ["category","sellCategory"]) $(id).innerHTML=categories.map(c=>`<option>${c}</option>`).join("");
+        $("sellCategory").value="運動休閒";
+        $("chips").innerHTML=categories.map(c=>`<button class="chip ${c==="全部"?"active":""}" data-cat="${c}">${c}</button>`).join("");
+        $("fileGrid").innerHTML=filePlans.map(f=>`<article class="file"><h3>${f[0]}</h3><p>${f[1]}</p><dl><dt>平均</dt><dd>${f[2]}</dd><dt>容量</dt><dd>${f[3]}</dd></dl><p>${f[4]}</p></article>`).join("");
+        $("policy").innerHTML=policies.map(p=>`<li>${p}</li>`).join("");
+        renderAuth(); renderItems(); renderPhotos(); renderChat();
+      }
+      function renderAuth(){ $("authBtn").textContent=user?`${user.name}｜登出`:"登入"; }
+      function renderItems(){
+        const q=$("q").value.trim(), cat=$("category").value, max=Number($("maxPrice").value||Infinity), min=Number($("minPrice").value||0), walk=Number($("walk").value), radius=Number($("radius").value);
+        const rows=listings.filter(x=>(!q||x.title.includes(q)||x.category.includes(q))&&(cat==="全部"||x.category===cat)&&x.price>=min&&x.price<=max&&x.walk<=walk&&x.distance<=radius);
+        $("mActive").textContent=listings.length;
+        $("items").innerHTML=rows.map((x,i)=>`<article class="card item" data-i="${i}"><div class="thumb"><img src="${x.image}" alt="${x.title}"></div><div class="item-body"><div class="muted">${x.category} · ${x.area}</div><h3>${x.title}</h3><div class="price">NT$ ${x.price.toLocaleString()}</div><div class="meta"><span>${x.walk} 分鐘</span><span>${x.distance} km</span><span>${x.seller}</span></div></div></article>`).join("");
+        document.querySelectorAll(".item").forEach((el,i)=>el.onclick=()=>showDetail(rows[i]));
+        showDetail(rows[0]||listings[0]);
+      }
+      function showDetail(x){
+        $("detail").innerHTML=`<img src="${x.image}" alt="${x.title}"><div class="body"><p class="muted">${x.seller} · 面交限定</p><h2>${x.title}</h2><div class="price">NT$ ${x.price.toLocaleString()}</div><p>${x.desc}</p><div class="map"><b>${x.area}</b><span class="muted">顯示模糊範圍，非精準地址</span></div><button class="primary" onclick="openTab('chat')">站內聊聊</button></div>`;
+      }
+      function openTab(id){document.querySelectorAll(".view").forEach(v=>v.classList.add("hidden"));$(id).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));}
+      document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
+      $("searchBtn").onclick=renderItems; ["q","category","walk","radius","minPrice","maxPrice"].forEach(id=>$(id).oninput=renderItems);
+      $("chips").onclick=e=>{if(!e.target.dataset.cat)return;$("category").value=e.target.dataset.cat;document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));e.target.classList.add("active");renderItems();};
+      $("authBtn").onclick=()=>{if(user){user=null;localStorage.removeItem("nearloopUser");renderAuth();return;}$("loginModal").classList.add("open");};
+      $("closeLogin").onclick=()=>$("loginModal").classList.remove("open");
+      $("loginBtn").onclick=()=>{const found=accounts.find(a=>a.email===$("email").value&&a.password===$("password").value);if(!found){$("loginMsg").className="error";$("loginMsg").textContent="帳號或密碼不正確";return;}user={name:found.name,role:found.role,email:found.email};localStorage.setItem("nearloopUser",JSON.stringify(user));$("loginModal").classList.remove("open");renderAuth();};
+      document.querySelectorAll(".accounts button").forEach(b=>b.onclick=()=>{$("email").value=b.dataset.email;$("password").value=b.dataset.pass;});
+      function addPhotos(files){photos=[...photos,...Array.from(files).filter(f=>f.type.startsWith("image/")).slice(0,8-photos.length).map(f=>({name:f.name,url:URL.createObjectURL(f)}))];renderPhotos();}
+      $("photoInput").onchange=e=>addPhotos(e.target.files); $("drop").ondragover=e=>e.preventDefault(); $("drop").ondrop=e=>{e.preventDefault();addPhotos(e.dataTransfer.files);};
+      function renderPhotos(){ $("photoGrid").innerHTML=photos.length?photos.map((p,i)=>`<div class="preview"><img src="${p.url}" alt="${p.name}"><b>${i===0?"主圖":i+1}</b><button data-r="${i}">刪除</button></div>`).join(""):`<div class="preview"><span class="muted">尚未選擇照片</span></div>`; document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{photos.splice(Number(b.dataset.r),1);renderPhotos();});}
+      $("sellForm").onsubmit=e=>{e.preventDefault();if(!user){$("loginModal").classList.add("open");return;}if(!photos.length){$("sellMsg").className="error";$("sellMsg").textContent="請至少上傳 1 張照片";return;}const x={title:$("sellTitle").value,category:$("sellCategory").value,price:Number($("sellPrice").value),walk:Number($("sellWalk").value),distance:Number($("sellDistance").value),area:$("sellArea").value,seller:user.name,image:photos[0].url,desc:$("sellDesc").value||"賣家尚未補充描述，建議面交時現場確認。"};listings.unshift(x);photos=[];$("sellForm").reset();$("sellMsg").className="notice";$("sellMsg").textContent="已刊登，並加入附近市集。";renderPhotos();renderItems();openTab("market");};
+      function renderChat(){$("chatBox").innerHTML=`<p class="panel">賣家：您好，這件目前還在，可以約公開地點面交。</p><p class="panel">買家：請問方便約什麼時候？</p>`;document.querySelectorAll(".quick").forEach(b=>b.onclick=()=>{$("chatBox").innerHTML+=`<p class="panel">${user?.name||"訪客"}：${b.textContent}</p>`;});}
+      init();
+    </script>
   </body>
 </html>
